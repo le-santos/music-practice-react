@@ -5,11 +5,6 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 
-import MusicNoteIcon from "@material-ui/icons/MusicNote";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import MusicVideoIcon from "@material-ui/icons/MusicVideo";
-import NoteAddIcon from "@material-ui/icons/NoteAdd";
-
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({

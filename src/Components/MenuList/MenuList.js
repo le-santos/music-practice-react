@@ -7,6 +7,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import AssessmentIcon from "@material-ui/icons/Assessment";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import SettingsIcon from "@material-ui/icons/Settings";
+import MusicVideoIcon from "@material-ui/icons/MusicVideo";
 
 export default function MenuList() {
   return (
@@ -37,6 +38,13 @@ export default function MenuList() {
           <AssessmentIcon />
         </ListItemIcon>
         <ListItemText primary={"Estatísticas"} />
+      </ListItem>
+
+      <ListItem button key={"Repertório"}>
+        <ListItemIcon>
+          <MusicVideoIcon />
+        </ListItemIcon>
+        <ListItemText primary={"Repertório"} />
       </ListItem>
 
       <ListItem button key={"Configurações"}>
