@@ -2,17 +2,14 @@ import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import { Avatar } from "@material-ui/core";
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-  },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(["width", "margin"], {
@@ -28,15 +25,14 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
+  toolbar: {
+    justifyContent: "space-between",
+  },
   menuButton: {
     marginRight: 36,
   },
   hide: {
     display: "none",
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
   },
 }));
 
@@ -50,7 +46,7 @@ export default function Header({ open, handleDrawerOpen }) {
         [classes.appBarShift]: open,
       })}
     >
-      <Toolbar>
+      <Toolbar className={classes.toolbar}>
         <IconButton
           color="inherit"
           aria-label="open drawer"
@@ -65,6 +61,7 @@ export default function Header({ open, handleDrawerOpen }) {
         <Typography variant="h6" noWrap>
           Music Practice Planner
         </Typography>
+        <Avatar variant="rounded">L</Avatar>
       </Toolbar>
     </AppBar>
   );

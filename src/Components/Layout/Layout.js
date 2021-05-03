@@ -3,12 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import MenuList from "../MenuList/MenuList";
 import Header from "../Header/Header";
-
-import MusicNoteIcon from "@material-ui/icons/MusicNote";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import MusicVideoIcon from "@material-ui/icons/MusicVideo";
-import NoteAddIcon from "@material-ui/icons/NoteAdd";
-import MiniDrawer from "../SideDrawer/SideDrawer";
 import SideDrawer from "../SideDrawer/SideDrawer";
 
 const drawerWidth = 240;
