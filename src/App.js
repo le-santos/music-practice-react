@@ -1,9 +1,12 @@
+import HomeControls from "./Components/HomeControls/HomeControls";
 import Layout from "./Components/Layout/Layout";
 
 function App() {
   return (
     <div className="App">
-      <Layout />
+      <Layout>
+        <HomeControls />
+      </Layout>
     </div>
   );
 }

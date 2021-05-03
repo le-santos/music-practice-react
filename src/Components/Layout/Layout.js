@@ -4,6 +4,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import MenuList from "../MenuList/MenuList";
 import Header from "../Header/Header";
 import SideDrawer from "../SideDrawer/SideDrawer";
+import { Container } from "@material-ui/core";
 
 const drawerWidth = 240;
 
@@ -43,12 +44,13 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
   },
   content: {
-    flexGrow: 1,
+    display: "grid",
+    marginTop: "4em",
     padding: theme.spacing(3),
   },
 }));
 
-export default function Layout() {
+export default function Layout({ ...props }) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
@@ -68,7 +70,9 @@ export default function Layout() {
         <MenuList />
       </SideDrawer>
 
-      <main className={classes.content}></main>
+      <Container maxWidth="lg" className={classes.content}>
+        {props.children}
+      </Container>
     </div>
   );
 }
