@@ -47,6 +47,10 @@ const useStyles = makeStyles((theme) => ({
     display: "grid",
     marginTop: "4em",
     padding: theme.spacing(3),
+    gridTemplateColumns: "repeat(4, 1fr)",
+    gridTemplateAreas:
+      "'control control control control' 'data data chart chart'",
+    gap: "16px 8px",
   },
 }));
 
