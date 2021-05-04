@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
     gridTemplateColumns: "repeat(4, 1fr)",
     gridTemplateAreas:
-      "'control control control control' 'data data chart chart'",
+      "'control control control control' 'data data chart chart' 'table table table table'",
     gap: "16px 8px",
   },
 }));
