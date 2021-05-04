@@ -7,13 +7,21 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import { Button } from "@material-ui/core";
+import { Button, Link } from "@material-ui/core";
+import Title from "../Title/Title";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   container: {
     gridArea: "table",
+    padding: theme.spacing(2),
   },
-});
+  tableHeading: {
+    fontWeight: 600,
+  },
+  seeMore: {
+    marginTop: theme.spacing(2),
+  },
+}));
 
 function createData(id, date, status, musics, attachments) {
   return { id, date, status, musics, attachments };
@@ -44,17 +52,24 @@ export default function SessionsTable() {
 
   return (
     <TableContainer component={Paper} className={classes.container}>
-      <Table aria-label="simple table">
-        <TableHead>
+      <Title>Sessões de Estudo</Title>
+      <Table size="small">
+        <TableHead className={classes.tableHead}>
           <TableRow>
-            <TableCell colSpan={"5"}>Sessões de estudo</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Data</TableCell>
-            <TableCell align="right">Status</TableCell>
-            <TableCell align="right">Músicas</TableCell>
-            <TableCell align="right">Anexos</TableCell>
-            <TableCell align="right"></TableCell>
+            <TableCell className={classes.tableHeading}>Data</TableCell>
+            <TableCell className={classes.tableHeading} align="right">
+              Status
+            </TableCell>
+            <TableCell className={classes.tableHeading} align="right">
+              Músicas
+            </TableCell>
+            <TableCell className={classes.tableHeading} align="right">
+              Anexos
+            </TableCell>
+            <TableCell
+              className={classes.tableHeading}
+              align="right"
+            ></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -71,6 +86,15 @@ export default function SessionsTable() {
           ))}
         </TableBody>
       </Table>
+      <div className={classes.seeMore}>
+        <Link
+          color="primary"
+          href="#"
+          onClick={(event) => event.preventDefault()}
+        >
+          Veja a lista completa...
+        </Link>
+      </div>
     </TableContainer>
   );
 }

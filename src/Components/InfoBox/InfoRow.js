@@ -1,4 +1,5 @@
 import { Paper, makeStyles, Typography } from "@material-ui/core";
+import Title from "../Title/Title";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -9,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
   number: {
     fontSize: "1.3rem",
+    padding: "0 0.5rem",
   },
 }));
 
@@ -18,7 +20,7 @@ export default function InfoRow({ content, subtitle, data }) {
   return (
     <Paper variant="outlined" square className={classes.paper}>
       <div>
-        <Typography variant="body1">{content}</Typography>
+        <Title>{content}</Title>
         {subtitle.length !== 0 && (
           <Typography variant="subtitle2">{subtitle}</Typography>
         )}
