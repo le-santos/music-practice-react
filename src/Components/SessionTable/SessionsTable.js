@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -9,6 +9,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { Button, Link } from "@material-ui/core";
 import Title from "../Title/Title";
+import fetchApiData from "../../services/fetchApiData";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -22,18 +23,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
   },
 }));
-
-function createData(id, date, status, musics, attachments) {
-  return { id, date, status, musics, attachments };
-}
-
-const rows = [
-  createData(0, "03/05/2021", "pendente", 2, 4),
-  createData(1, "03/05/2021", "completa", 3, 3),
-  createData(2, "03/05/2021", "completa", 2, 2),
-  createData(3, "03/05/2021", "completa", 3, 6),
-  createData(4, "03/05/2021", "completa", 1, 4),
-];
 
 const detailsButton = (
   <Button variant="contained" color="primary">
@@ -49,6 +38,17 @@ const practiceButton = (
 
 export default function SessionsTable() {
   const classes = useStyles();
+  const [praticeSessions, setPracticeSessions] = useState([]);
+
+  const getDataFromApi = async () => {
+    const endpoint = "practice_sessions";
+    const data = await fetchApiData(endpoint);
+    setPracticeSessions(data);
+  };
+
+  useEffect(() => {
+    getDataFromApi();
+  }, []);
 
   return (
     <TableContainer component={Paper} className={classes.container}>
@@ -73,14 +73,14 @@ export default function SessionsTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell align="right">{row.status}</TableCell>
-              <TableCell align="right">{row.musics}</TableCell>
-              <TableCell align="right">{row.attachments}</TableCell>
+          {praticeSessions.map((session) => (
+            <TableRow key={session.id}>
+              <TableCell>{session.created_at}</TableCell>
+              <TableCell align="right">{session.status}</TableCell>
+              <TableCell align="right">{session.musics}</TableCell>
+              <TableCell align="right">{session.attachments}</TableCell>
               <TableCell align="right">
-                {row.status === "pendente" ? practiceButton : detailsButton}
+                {session.status === "pendente" ? practiceButton : detailsButton}
               </TableCell>
             </TableRow>
           ))}
