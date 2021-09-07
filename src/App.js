@@ -9,9 +9,6 @@ function App() {
     <div className="App">
       <Layout>
         <Routes />
-        <HomeControls />
-        <InfoBox />
-        <SessionsTable />
       </Layout>
     </div>
   );
