@@ -10,6 +10,7 @@ import Paper from "@material-ui/core/Paper";
 import { Button, Link } from "@material-ui/core";
 import Title from "../Title/Title";
 import fetchApiData from "../../services/fetchApiData";
+import RouterLink from "../RouterLink/RouterLink";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -52,7 +53,9 @@ export default function SessionsTable() {
 
   return (
     <TableContainer component={Paper} className={classes.container}>
-      <Title>Sessões de Estudo</Title>
+      <Title>
+        <RouterLink to="practice_sessions">Sessões de Estudo</RouterLink>
+      </Title>
       <Table size="small">
         <TableHead className={classes.tableHead}>
           <TableRow>

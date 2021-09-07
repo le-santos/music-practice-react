@@ -3,6 +3,7 @@ import ControlButton from "../ControlButton/ControlButton";
 import MusicNoteIcon from "@material-ui/icons/MusicNote";
 import MusicVideoIcon from "@material-ui/icons/MusicVideo";
 import NoteAddIcon from "@material-ui/icons/NoteAdd";
+import RouterLink from "../RouterLink/RouterLink";
 
 const useStyles = makeStyles((theme) => ({
   box: {
@@ -18,21 +19,27 @@ export default function HomeControls() {
 
   return (
     <Box className={classes.box}>
-      <ControlButton
-        name={"Nova Sessão"}
-        icon={<NoteAddIcon />}
-        color="secondary"
-      />
-      <ControlButton
-        name={"Adicionar Música"}
-        icon={<MusicNoteIcon />}
-        color="primary"
-      />
-      <ControlButton
-        name={"Meu Repertório"}
-        icon={<MusicVideoIcon />}
-        color="primary"
-      />
+      <RouterLink to="new_practice_session">
+        <ControlButton
+          name={"Nova Sessão"}
+          icon={<NoteAddIcon />}
+          color="secondary"
+        />
+      </RouterLink>
+      <RouterLink to="new_music">
+        <ControlButton
+          name={"Adicionar Música"}
+          icon={<MusicNoteIcon />}
+          color="primary"
+        />
+      </RouterLink>
+      <RouterLink to="musics">
+        <ControlButton
+          name={"Meu Repertório"}
+          icon={<MusicVideoIcon />}
+          color="primary"
+        />
+      </RouterLink>
     </Box>
   );
 }

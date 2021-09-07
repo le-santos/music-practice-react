@@ -8,51 +8,64 @@ import AssessmentIcon from "@material-ui/icons/Assessment";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import SettingsIcon from "@material-ui/icons/Settings";
 import MusicVideoIcon from "@material-ui/icons/MusicVideo";
+import RouterLink from "../RouterLink/RouterLink";
 
 export default function MenuList() {
   return (
     <List>
-      <ListItem button key={"Busca"}>
-        <ListItemIcon>
-          <SearchIcon />
-        </ListItemIcon>
-        <ListItemText primary={"Busca"} />
-      </ListItem>
+      <RouterLink to="/">
+        <ListItem button key={"Início"}>
+          <ListItemIcon>
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Início"} />
+        </ListItem>
+      </RouterLink>
 
-      <ListItem button key={"Início"}>
-        <ListItemIcon>
-          <HomeIcon />
-        </ListItemIcon>
-        <ListItemText primary={"Início"} />
-      </ListItem>
+      <RouterLink to="/">
+        <ListItem button key={"Busca"}>
+          <ListItemIcon>
+            <SearchIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Busca"} />
+        </ListItem>
+      </RouterLink>
 
-      <ListItem button key={"Calendário"}>
-        <ListItemIcon>
-          <CalendarTodayIcon />
-        </ListItemIcon>
-        <ListItemText primary={"Calendário"} />
-      </ListItem>
+      <RouterLink to="/">
+        <ListItem button key={"Calendário"}>
+          <ListItemIcon>
+            <CalendarTodayIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Calendário"} />
+        </ListItem>
+      </RouterLink>
 
-      <ListItem button key={"Estatísticas"}>
-        <ListItemIcon>
-          <AssessmentIcon />
-        </ListItemIcon>
-        <ListItemText primary={"Estatísticas"} />
-      </ListItem>
+      <RouterLink to="/">
+        <ListItem button key={"Estatísticas"}>
+          <ListItemIcon>
+            <AssessmentIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Estatísticas"} />
+        </ListItem>
+      </RouterLink>
 
-      <ListItem button key={"Repertório"}>
-        <ListItemIcon>
-          <MusicVideoIcon />
-        </ListItemIcon>
-        <ListItemText primary={"Repertório"} />
-      </ListItem>
+      <RouterLink to="/">
+        <ListItem button key={"Repertório"}>
+          <ListItemIcon>
+            <MusicVideoIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Repertório"} />
+        </ListItem>
+      </RouterLink>
 
-      <ListItem button key={"Configurações"}>
-        <ListItemIcon>
-          <SettingsIcon />
-        </ListItemIcon>
-        <ListItemText primary={"Configurações"} />
-      </ListItem>
+      <RouterLink to="/">
+        <ListItem button key={"Configurações"}>
+          <ListItemIcon>
+            <SettingsIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Configurações"} />
+        </ListItem>
+      </RouterLink>
     </List>
   );
 }
